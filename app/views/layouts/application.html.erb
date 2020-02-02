@@ -3,13 +3,25 @@
   <head>
     <title>Tclone</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <%# <%= csp_meta_tag %> 
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+
+    <ul>
+      <li>TClone</li>
+    </ul>
+  </header>
     <%= yield %>
+
+    <footer class="footer">
+
+      <p>kato株式会社</p>
+      <p>© 2015-2016 Copyright kato Corp.</p>
+    </footer>
   </body>
 </html>
