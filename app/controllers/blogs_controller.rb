@@ -11,6 +11,13 @@ class BlogsController < ApplicationController
   def new
     @blog = Blog.new
   end
+  
+  def confirm
+    @blog = Blog.new(blog_params)
+    @blog.id = params[:id]
+    # TODO: edit時にバリデーションエラーになった際、render newされてしまう
+    render :new if @blog.invalid?
+  end
 
   def edit
   end
@@ -55,6 +62,6 @@ class BlogsController < ApplicationController
     end
 
     def blog_params
-      params.require(:blog).permit(:content)
+      params.require(:blog).permit(:id, :content)
     end
 end
